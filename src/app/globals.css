@@ -5,4 +5,51 @@
 body{
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
+}
+
+.character.correct{
+  color : #d1d0c5;
+}
+.character.incorrect{
+  color : #ca4754;
+}
+
+.character{
+  position: relative;
+}
+
+
+.character.active::before{
+  content: "|";
+  animation: caret 500ms ease-in-out 0ms infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate-reverse;
+  border-radius: 1000em;
+  overflow: hidden;
+  position: absolute;
+  left:-10px;
+}
+
+@keyframes caret {
+  0%{
+    color : #e2b714;
+  }  
+  100%{
+    color : #323437;
+  }
+}
+
+.testdiv{
+  height: 50vh;
+  /* background-color: red; */
+  position: relative;
+  overflow:hidden;
+}
+
+.testdiv::after{
+  content: "";
+  background-image: linear-gradient(#32343700 60%,#323437);
+  position: absolute;
+  inset: 0;
 }
